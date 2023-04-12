@@ -5,11 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock-Paper-Scissor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alkatra:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
-
+    <header>
+        <h1>ROCK-PAPER-SCISSOR</h1>
+    </header>
+    <main id="selection">
+        <h2>Choose your Weapon:</h2>
+        <div>
+            <img src="images/rock.jpg" alt="rock">
+            <p>Rock</p>
+        </div>
+        <div>
+            <img src="images/paper.jpg" alt="paper">
+            <p>Paper</p>
+        </div>
+        <div>
+            <img src="images/scissor.jpg" alt="scissor">
+            <p>Scissor</p>
+        </div>
+    </main>
+    <section id="scoreboard">
+        <h2>Scoreboard: ( Whoever will score 5 Points first wins )</h2>
+        <div>
+            <h3>You</h3>
+            <h3><span id="yourScore">0</span> Points</h3>
+        </div>
+        <div>
+            <h3>Computer</h3>
+            <h3><span id="computerScore">0</span> Points</h3>
+        </div>
+    </section>
     <script src="js/script.js"></script>
 </body>
 </html>

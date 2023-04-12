@@ -1,4 +1,10 @@
 
+const choice = document.querySelectorAll('#selection > div') ;
+const yourScore = document.querySelector('#yourScore') ;
+const computerScore = document.querySelector('#computerScore') ;
+
+
+choice.forEach( item => item.addEventListener('click',game)) ;
 
 
 function getComputerChoice(){
@@ -21,16 +27,17 @@ function playRound(palyerSelection,computerSelection){
     else if ( ( palyerSelection === "rock" && computerSelection === "scissor" ) || 
               ( palyerSelection === "paper" && computerSelection === "rock" ) || 
               ( palyerSelection === "scissor" && computerSelection === "paper" ) ){
-                console.log(`You win! ${palyerSelection} beats ${computerSelection}. `)
+                console.log(`You win! ${palyerSelection} beats ${computerSelection}. `) ;
+                yourScore.textContent = +(yourScore.textContent) + 1 ;
               }
     else {
-        console.log(`You lose! ${computerSelection} beats ${palyerSelection}. `)
+        console.log(`You lose! ${computerSelection} beats ${palyerSelection}. `) ;
+        computerScore.textContent = +(computerScore.textContent) + 1;
     }
 }
 
-function game () {
-    let palyerSelection = prompt("Select from rock paper scissor :","");
-    palyerSelection = palyerSelection.toLowerCase();
+function game (e) {
+    palyerSelection = e.target.alt ;
     const computerSelection = getComputerChoice();
     playRound(palyerSelection,computerSelection);
 }

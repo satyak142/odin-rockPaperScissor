@@ -1,0 +1,40 @@
+body{
+    margin: 0;
+    background-color: orange;
+    font-family: 'Alkatra', cursive;
+}
+h1{
+    color: darkmagenta;
+    text-align: center;
+}
+
+main,#scoreboard{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    color: darkorchid;
+    text-align: center;
+}
+#scoreboard{
+    color: deeppink;
+}
+
+h2{
+    width: 100%;
+    margin: 10px;
+}
+h3{
+    margin: 5px;
+}
+main > div{
+    width: 30%;
+}
+main img{
+    width: 100%;
+}
+main p{
+    font-size: 24px;
+    text-align: center;
+    margin: 0;
+}
