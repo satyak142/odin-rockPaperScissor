@@ -41,6 +41,7 @@ function playRound(palyerSelection,computerSelection){
     }
     gameLog.insertBefore(newDiv,gameLog.firstElementChild) ;
     if(computerScore.textContent === '5' || yourScore.textContent === '5'){
+        choice.forEach(item => item.removeEventListener('click',game)) ;
         gameover();
     }
 }
@@ -54,13 +55,16 @@ function game (e) {
 function gameover () {
     gameLog.innerHTML = '';
     if(computerScore.textContent === '5'){
-        gameLog.innerHTML = `<p>Computer is the winner.</p>`
+        gameLog.innerHTML = `<p>Computer is the final winner.</p>`
         gameLog.className = 'lose'
     }else{
-        gameLog.innerHTML = `<p>You are the winner.</p>`
+        gameLog.innerHTML = `<p>You are the final winner.</p>`
         gameLog.className = 'win'
     }
     let endButton = document.createElement('button') ;
     endButton.textContent = 'Restart Game' ;
     gameLog.appendChild(endButton);
+    endButton.addEventListener('click',()=>{
+        location.reload()
+    });
 }
